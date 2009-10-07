@@ -16,7 +16,28 @@ Samples.contextMenuPage = SC.Page.design({
       layout: {top: 50, centerX: 0, width: 150, height: 30},
       classNames: ['click'],
       textAlign: SC.ALIGN_CENTER,
-      value: 'Right Click on Me'
+      value: 'Right Click on Me',
+      
+      mouseDown: function(evt){
+        console.log('Clicking on the Example');
+        var menuOptions = [
+          { title: "Action #1",  target: Samples, action: 'fireAction1', isEnabled: YES },
+          { title: "Action #2",  target: Samples, action: 'fireAction2', isEnabled: YES },
+          { isSeparator: YES },
+          { title: "Action #3", target: Samples, action: '', isEnabled: NO },
+          { isSeparator: YES },
+          { title: "Action #4", target: Samples, action: '', isEnabled: NO }
+        ];
+
+        var menu = SCUI.ContextMenuPane.create({
+          layout: { width: 200, height: 0 },
+          contentView: SC.View.design({}),
+          items: menuOptions
+        });
+
+        menu.popup(this, evt);
+        return NO;
+      }
     }),
     
     code: SC.LabelView.design({
