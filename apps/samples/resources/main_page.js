@@ -21,7 +21,7 @@ Samples.mainPage = SC.Page.design({
         { title: "Calendar".loc(), value:'Samples.mainPage.calendarSampleView' },
         { title: "Auto-Suggest".loc(), value:'Samples.mainPage.autoSuggestSampleView' },
         { title: "Collapsible".loc(), value:'Samples.mainPage.collapsibleSampleView' },
-        { title: "Context Menu Pane".loc(), value:'Samples.mainPage.contextMenuSampleView' },
+        { title: "Context Menu Pane".loc(), value:'Samples.contextMenuPage.mainView' },
         { title: "ContentEditable".loc(), value:'Samples.mainPage.contentEditableSampleView' },
         { title: "Upload".loc(), value:'Samples.mainPage.uploadSampleView' },
         { title: "Mixins".loc(), value:'Samples.mainPage.mixinSampleView' }
@@ -42,11 +42,6 @@ Samples.mainPage = SC.Page.design({
     
     collapsibleSampleView: SC.View.design({
       classNames: ['auto-suggest-sample'],
-      layout: { top: 30, left: 0, right: 0, bottom: 0 }
-    }),
-    
-    contextMenuSampleView: SC.View.design({
-      classNames: ['context-menu-sample'],
       layout: { top: 30, left: 0, right: 0, bottom: 0 }
     }),
     
