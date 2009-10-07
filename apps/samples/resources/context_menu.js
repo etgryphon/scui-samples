@@ -19,10 +19,9 @@ Samples.contextMenuPage = SC.Page.design({
       value: 'Right Click on Me',
       
       mouseDown: function(evt){
-        console.log('Clicking on the Example')
         var menuOptions = [
-          { title: "Action #1",  target: Samples, action: 'fireAction1', isEnabled: YES },
-          { title: "Action #2",  target: Samples, action: 'fireAction2', isEnabled: YES },
+          { title: "Action #1",  target: 'Samples', action: 'fireAction1', isEnabled: YES },
+          { title: "Action #2",  target: 'Samples', action: 'fireAction2', isEnabled: YES },
           { isSeparator: YES },
           { title: "Action #3", target: Samples, action: '', isEnabled: NO },
           { isSeparator: YES },
@@ -36,7 +35,7 @@ Samples.contextMenuPage = SC.Page.design({
         });
 
         menu.popup(this, evt);
-        return NO;
+        return YES;
       }
     }),
     

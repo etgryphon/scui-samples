@@ -20,8 +20,21 @@ Samples = SC.Application.create(
   // of your model data.  You can also set a data source on this store to
   // connect to a backend server.  The default setup below connects the store
   // to any fixtures you define.
-  store: SC.Store.create().from(SC.Record.fixtures)
+  store: SC.Store.create().from(SC.Record.fixtures),
   
-  // TODO: Add global constants or singleton objects needed by your app here.
+  // *****************************************
+  // * Functions for Context Menu Pane Sample
+  // *****************************************
+  fireAction1: function(){ 
+    console.log('Testing 1...');
+    alert('You Just Fired Action #1'); 
+  },
+  
+  fireAction2: function(){ 
+    console.log('Testing 2...');
+    alert('You Just Fired Action #2'); 
+  }
+  
+   
 
 }) ;
