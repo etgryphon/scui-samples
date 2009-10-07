@@ -19,7 +19,7 @@ Samples.contextMenuPage = SC.Page.design({
       value: 'Right Click on Me',
       
       mouseDown: function(evt){
-        console.log('Clicking on the Example');
+        console.log('Clicking on the Example')
         var menuOptions = [
           { title: "Action #1",  target: Samples, action: 'fireAction1', isEnabled: YES },
           { title: "Action #2",  target: Samples, action: 'fireAction2', isEnabled: YES },
@@ -41,7 +41,7 @@ Samples.contextMenuPage = SC.Page.design({
     }),
     
     code: SC.LabelView.design({
-      layout: {top: 200, centerX: 0, width: 500, height: 500},
+      layout: {top: 200, left: 10, right: 10, height: 500},
       classNames: ['code'],
       textAlign: SC.ALIGN_CENTER,
       value: 'Code Here'
