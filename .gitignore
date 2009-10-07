@@ -1,0 +1,9 @@
+.DS_Store
+buildtools
+log
+public
+tmp
+*.swp
+*.swo
+frameworks/sproutcore
+TODO
