@@ -1,5 +1,9 @@
-.click {
+.click, .resize {
   border: 1px black solid;
+}
+
+.handle {
+  background-color: red;
 }
 
 .code {

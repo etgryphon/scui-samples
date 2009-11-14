@@ -24,7 +24,7 @@ Samples.mainPage = SC.Page.design({
         { title: "Context Menu Pane", value:'Samples.contextMenuPage.mainView' },
         { title: "ContentEditable", value:'Samples.mainPage.contentEditableSampleView' },
         { title: "Upload", value:'Samples.mainPage.uploadSampleView' },
-        { title: "Mixins", value:'Samples.mainPage.mixinSampleView' }
+        { title: "Mixins", value:'Samples.mixinsPage.mainView' }
       ],
       itemTitleKey: 'title',
       itemValueKey: 'value'
@@ -52,11 +52,6 @@ Samples.mainPage = SC.Page.design({
     
     uploadSampleView: SC.View.design({
       classNames: ['upload-sample'],
-      layout: { top: 30, left: 0, right: 0, bottom: 0 }
-    }),
-    
-    mixinSampleView: SC.View.design({
-      classNames: ['mixin-sample'],
       layout: { top: 30, left: 0, right: 0, bottom: 0 }
     })
   })
