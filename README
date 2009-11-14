@@ -1,0 +1,18 @@
+=== Welcome to the Sproutcore-UI (SCUI) Sample Application: ===
+
+This is a basic sample app for some great native Sproutcore UI functionality from the SCUI project
+
+=== INSTALLATION ===
+
+In your projects directory, run:
+  git clone git://github.com/etgryphon/scui-samples.git
+
+=== CONTRIBUTORS ===
+
+Main Architect: Evin Grano
+Contributors:
+  - Mike Ball
+  
+=== LICENSE ===
+
+SCUI Samples is under the MIT License
