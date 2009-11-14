@@ -19,7 +19,7 @@ Samples.mainPage = SC.Page.design({
       nowShowing: 'Samples.mainPage.calendarSampleView', 
       items: [
         { title: "Calendar", value:'Samples.mainPage.calendarSampleView' },
-        { title: "Auto-Suggest", value:'Samples.mainPage.autoSuggestSampleView' },
+        { title: "Combo Box", value:'Samples.mainPage.autoSuggestSampleView' },
         { title: "Collapsible", value:'Samples.mainPage.collapsibleSampleView' },
         { title: "Context Menu Pane", value:'Samples.contextMenuPage.mainView' },
         { title: "ContentEditable", value:'Samples.mainPage.contentEditableSampleView' },
@@ -36,7 +36,7 @@ Samples.mainPage = SC.Page.design({
     }),
     
     autoSuggestSampleView: SC.View.design({
-      classNames: ['auto-suggest-sample'],
+      classNames: ['combobox-sample'],
       layout: { top: 30, left: 0, right: 0, bottom: 0 }
     }),
     

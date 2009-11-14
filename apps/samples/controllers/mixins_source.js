@@ -18,17 +18,19 @@ Samples.mixinSourceController = SC.ArrayController.create(
     Expecting a tree structure
   */
   content: null,
+  selection: null,
     
   refreshSources: function(){
     var root = [
-      SC.Object.create({ displayName: "Mobility"}),
-      SC.Object.create({ displayName: "Resizable"})
+      SC.Object.create({ name: "Mobility"}),
+      SC.Object.create({ name: "Resizable"})
     ];
     
     this.set('content', root);
+    this.set('selection', SC.SelectionSet.create().addObject(root[0]) );
   },
   
   mixinSelected: function(){
-    console.log.("I'm here!!!!");
+    console.log("I'm here!!!!");
   }
 });

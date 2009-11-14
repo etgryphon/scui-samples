@@ -20,8 +20,8 @@ Samples.contextMenuPage = SC.Page.design({
       
       mouseDown: function(evt){
         var menuOptions = [
-          { title: "Action #1",  target: 'Samples', action: 'fireAction1', isEnabled: YES },
-          { title: "Action #2",  target: 'Samples', action: 'fireAction2', isEnabled: YES },
+          { title: "Action #1",  target: Samples, action: 'fireAction1', isEnabled: YES },
+          { title: "Action #2",  target: Samples, action: 'fireAction2', isEnabled: YES },
           { isSeparator: YES },
           { title: "Action #3", target: Samples, action: '', isEnabled: NO },
           { isSeparator: YES },

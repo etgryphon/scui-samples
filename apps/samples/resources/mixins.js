@@ -15,6 +15,7 @@ Samples.mixinsPage = SC.Page.design({
       rowHeight: 35,
       selectionBinding: 'Samples.mixinSourceController.selection',
       contentBinding: 'Samples.mixinSourceController',
+      contentValueKey: 'name',
       actOnSelect: YES,
       target: Samples.mixinSourceController,
       action: 'mixinSelected'

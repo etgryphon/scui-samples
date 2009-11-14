@@ -20,11 +20,8 @@ Samples.main = function main() {
   Samples.getPath('mainPage.mainPane').append() ;
 
   // Step 2. Set the content property on your primary controller.
-  // This will make your app come alive!
-
-  // TODO: Set the content property on your primary controller
-  // ex: Samples.contactsController.set('content',Samples.contacts);
-
+  Samples.mixinSourceController.refreshSources();
+  
 } ;
 
 function main() { Samples.main(); }
