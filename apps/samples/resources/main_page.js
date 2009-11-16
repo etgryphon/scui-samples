@@ -16,43 +16,18 @@ Samples.mainPage = SC.Page.design({
     sampleTabView: SC.TabView.design({
   		layout: { top: 30, left: 30, right: 30, bottom: 30 },
       classNames: ['sample-tabs'],
-      nowShowing: 'Samples.mainPage.calendarSampleView', 
+      nowShowing: 'Samples.comboBoxPage.mainView', 
       items: [
-        { title: "Calendar", value:'Samples.mainPage.calendarSampleView' },
-        { title: "Combo Box", value:'Samples.mainPage.autoSuggestSampleView' },
-        { title: "Collapsible", value:'Samples.mainPage.collapsibleSampleView' },
+        /*{ title: "Calendar", value:'Samples.mainPage.calendarSampleView' },*/
+        { title: "Combo Box", value: 'Samples.comboBoxPage.mainView' },
+        /*{ title: "Collapsible", value:'Samples.mainPage.collapsibleSampleView' },*/
         { title: "Context Menu Pane", value:'Samples.contextMenuPage.mainView' },
-        { title: "ContentEditable", value:'Samples.mainPage.contentEditableSampleView' },
-        { title: "Upload", value:'Samples.mainPage.uploadSampleView' },
+        /*{ title: "ContentEditable", value:'Samples.mainPage.contentEditableSampleView' },*/
+        /*{ title: "Upload", value:'Samples.mainPage.uploadSampleView' },*/
         { title: "Mixins", value:'Samples.mixinsPage.mainView' }
       ],
       itemTitleKey: 'title',
       itemValueKey: 'value'
-    }),
-    
-    calendarSampleView: SC.View.design({
-      classNames: ['calendar-sample'],
-      layout: { top: 30, left: 0, right: 0, bottom: 0 }
-    }),
-    
-    autoSuggestSampleView: SC.View.design({
-      classNames: ['combobox-sample'],
-      layout: { top: 30, left: 0, right: 0, bottom: 0 }
-    }),
-    
-    collapsibleSampleView: SC.View.design({
-      classNames: ['auto-suggest-sample'],
-      layout: { top: 30, left: 0, right: 0, bottom: 0 }
-    }),
-    
-    contentEditableSampleView: SC.View.design({
-      classNames: ['content-editable-sample'],
-      layout: { top: 30, left: 0, right: 0, bottom: 0 }
-    }),
-    
-    uploadSampleView: SC.View.design({
-      classNames: ['upload-sample'],
-      layout: { top: 30, left: 0, right: 0, bottom: 0 }
     })
   })
 

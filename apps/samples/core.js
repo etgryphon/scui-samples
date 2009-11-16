@@ -26,15 +26,15 @@ Samples = SC.Application.create(
   // * Functions for Context Menu Pane Sample
   // *****************************************
   fireAction1: function(){ 
-    console.log('Testing 1...');
     alert('You Just Fired Action #1'); 
   },
   
   fireAction2: function(){ 
-    console.log('Testing 2...');
     alert('You Just Fired Action #2'); 
+  },
+  
+  fireAction3: function(){
+    alert('You Just Fired Action #3'); 
   }
   
-   
-
 }) ;

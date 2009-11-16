@@ -20,10 +20,13 @@ Samples.mixinSourceController = SC.ArrayController.create(
   content: null,
   selection: null,
     
-  refreshSources: function(){
+  refresh: function(){
     var root = [
-      SC.Object.create({ name: "Mobility"}),
-      SC.Object.create({ name: "Resizable"})
+      SC.Object.create({ name: "Mobility", view: 'mobility'}),
+      SC.Object.create({ name: "Resizable", view: 'resizable'}),
+      SC.Object.create({ name: "Simple Button", view: 'simpleButton'}),
+      SC.Object.create({ name: "DropDown", view: 'dropDown'}),
+      SC.Object.create({ name: "ToolTip", view: 'toolTip'})
     ];
     
     this.set('content', root);
@@ -31,6 +34,34 @@ Samples.mixinSourceController = SC.ArrayController.create(
   },
   
   mixinSelected: function(){
-    console.log("I'm here!!!!");
+    var sel = this.getPath('selection.firstObject');
+    if (sel) {
+      var scene = Samples.mixinsPage.getPath('mainView.detail');
+      var view = sel.get('view');
+      scene.set('nowShowing', view);
+    } 
+    else {
+      console.log('There is no selection...');
+    }
+    
+  },
+  
+  // SimpleButton Mixin Action
+  simpleButtonAction: function(){
+    alert('You Triggered and Action with the SimpleButton Mixin');
+  },
+  
+  // DropDown Mixin Actions
+  fireAction1: function(){ 
+    alert('You Just Fired Action #1'); 
+  },
+  
+  fireAction2: function(){ 
+    alert('You Just Fired Action #2'); 
+  },
+  
+  fireAction3: function(){
+    alert('You Just Fired Action #3'); 
   }
+  
 });

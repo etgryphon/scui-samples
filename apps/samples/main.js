@@ -20,8 +20,8 @@ Samples.main = function main() {
   Samples.getPath('mainPage.mainPane').append() ;
 
   // Step 2. Set the content property on your primary controller.
-  Samples.mixinSourceController.refreshSources();
-  
+  Samples.mixinSourceController.refresh();
+  Samples.comboBoxController.refresh();
 } ;
 
 function main() { Samples.main(); }
