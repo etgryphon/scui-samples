@@ -14,7 +14,7 @@ Samples.mainPage = SC.Page.design({
     childViews: 'sampleTabView'.w(),
     
     sampleTabView: SC.TabView.design({
-  		layout: { top: 30, left: 30, right: 30, bottom: 30 },
+  		layout: { top: 30, centerX: 0, width: 1024, bottom: 30 },
       classNames: ['sample-tabs'],
       nowShowing: 'Samples.comboBoxPage.mainView', 
       items: [
