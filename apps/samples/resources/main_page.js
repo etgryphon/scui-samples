@@ -24,6 +24,7 @@ Samples.mainPage = SC.Page.design({
         { title: "Context Menu Pane", value:'Samples.contextMenuPage.mainView' },
         /*{ title: "ContentEditable", value:'Samples.mainPage.contentEditableSampleView' },*/
         /*{ title: "Upload", value:'Samples.mainPage.uploadSampleView' },*/
+        { title: "Content Editable", value:'Samples.contentEditablePage.mainView' },
         { title: "Mixins", value:'Samples.mixinsPage.mainView' }
       ],
       itemTitleKey: 'title',
