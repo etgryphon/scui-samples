@@ -6,6 +6,10 @@ This is a basic sample app for some great native Sproutcore UI functionality fro
 
 In your projects directory, run:
   git clone git://github.com/etgryphon/scui-samples.git
+  cd scui-samples
+  mkdir frameworks
+  cd frameworks
+  git clone git://github.com/etgryphon/sproutcore-ui.git scui
 
 === CONTRIBUTORS ===
 
