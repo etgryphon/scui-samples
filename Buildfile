@@ -14,3 +14,7 @@ config :scui, :required => [:sproutcore, :'scui/foundation', :'scui/calendar', :
 config :samples do |c|
   c[:required] = [:sproutcore, :scui]
 end
+
+config :dashboard do |c|
+  c[:required] = [:sproutcore, :scui]
+end
