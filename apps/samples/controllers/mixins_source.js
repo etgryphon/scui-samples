@@ -1,7 +1,7 @@
 // ==========================================================================
 // Samples.mixinSourceController
 // ==========================================================================
-
+/*globals Samples */
 /** @static
 
   This ArrayController that serves up the SourceList to the Component Library
@@ -25,7 +25,8 @@ Samples.mixinSourceController = SC.ArrayController.create(
       SC.Object.create({ name: "Mobility", view: 'mobility'}),
       SC.Object.create({ name: "Resizable", view: 'resizable'}),
       SC.Object.create({ name: "Simple Button", view: 'simpleButton'}),
-      SC.Object.create({ name: "DropDown", view: 'dropDown'}),
+      SC.Object.create({ name: "DropDown", view: 'dropDown1'}),
+      SC.Object.create({ name: "DropDown Custom", view: 'dropDown2'}),
       SC.Object.create({ name: "ToolTip", view: 'toolTip'})
     ];
     

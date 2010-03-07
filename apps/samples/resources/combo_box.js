@@ -1,10 +1,13 @@
-// Project:   Samples - mainPage
-// Copyright: ©2009 My Company, Inc.
+// ==========================================================================
+// Project:   SCUI Samples - comboBoxPage
+// Copyright: ©2009-2010 Evin Grano and Contributors
 // ==========================================================================
 /*globals Samples */
-sc_require('core');
+sc_require('views/code');
+sc_require('core_code');
 
 // This page describes the main user interface for your application.  
+// @@CODE[combo_box]
 Samples.comboBoxPage = SC.Page.design({
   
   mainView: SC.View.design({
@@ -26,11 +29,10 @@ Samples.comboBoxPage = SC.Page.design({
       selectedItemBinding: 'Samples.comboBoxController.selection'
     }),
     
-    code: SC.LabelView.design({
+    code: Samples.CodeView.design({
       layout: {top: 90, left: 10, right: 10, bottom: 10},
-      classNames: ['code'],
-      textAlign: SC.ALIGN_CENTER,
-      value: 'Code Here'
+      codeBinding: SC.Binding.from('Samples.codeSamples.combo_box').oneWay()
     })
   })
 });
+// @@END_CODE

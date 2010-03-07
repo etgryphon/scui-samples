@@ -1,5 +1,5 @@
-// Project:   SCUI Samples
-// Copyright: ©2009 Evin Grano
+// Project:   SCUI Samples - mixinsPage
+// Copyright: ©2009-2010 Evin Grano and Contributors
 // ==========================================================================
 /*globals Samples */
 sc_require('core');
@@ -23,12 +23,13 @@ Samples.mixinsPage = SC.Page.design({
     
     detail: SC.SceneView.design({
       layout: {top: 10, left: 260, right: 10, bottom: 10},
-      scenes: ['mobility', 'resizable', 'simpleButton', 'dropDown', 'toolTip'],
+      scenes: ['mobility', 'resizable', 'simpleButton', 'dropDown1', 'dropDown2', 'toolTip'],
       nowShowing: 'mobility'
     })
     
   }),
   
+  // @@CODE[mobility]
   mobility: SC.View.design({
     classNames: ['mixins-sample'],
     layout: { top: 30, left: 0, right: 0, bottom: 0 },
@@ -41,14 +42,14 @@ Samples.mixinsPage = SC.Page.design({
       value: 'Click on Me And Drag Around'
     }),
     
-    code: SC.LabelView.design({
-      layout: {top: 175, left: 10, right: 10, height: 500},
-      classNames: ['code'],
-      textAlign: SC.ALIGN_CENTER,
-      value: 'Code Here'
-    })
+    code: Samples.CodeView.design({
+      layout: {top: 175, left: 10, right: 10, bottom: 10},
+      codeBinding: SC.Binding.from('Samples.codeSamples.mobility').oneWay()
+    })    
   }),
+  // @@END_CODE
   
+  // @@CODE[resizable]
   resizable: SC.View.design({
     childViews: 'code example1 example2 example3'.w(),
     
@@ -105,14 +106,14 @@ Samples.mixinsPage = SC.Page.design({
       })
     }),
     
-    code: SC.LabelView.design({
-      layout: {top: 175, left: 10, right: 10, height: 500},
-      classNames: ['code'],
-      textAlign: SC.ALIGN_CENTER,
-      value: 'Code Here'
-    })
+    code: Samples.CodeView.design({
+      layout: {top: 175, left: 10, right: 10, bottom: 10},
+      codeBinding: SC.Binding.from('Samples.codeSamples.resizable').oneWay()
+    })    
   }),
+  // @@END_CODE
   
+  // @@CODE[simpleButton]
   simpleButton: SC.View.design({
     classNames: ['mixins-sample'],
     layout: { top: 30, left: 0, right: 0, bottom: 0 },
@@ -127,43 +128,61 @@ Samples.mixinsPage = SC.Page.design({
       action: 'simpleButtonAction'
     }),
     
-    code: SC.LabelView.design({
-      layout: {top: 175, left: 10, right: 10, height: 500},
-      classNames: ['code'],
-      textAlign: SC.ALIGN_CENTER,
-      value: 'Code Here'
+    code: Samples.CodeView.design({
+      layout: {top: 175, left: 10, right: 10, bottom: 10},
+      codeBinding: SC.Binding.from('Samples.codeSamples.simpleButton').oneWay()
     })
   }),
+  // @@END_CODE
   
-  dropDown: SC.View.design({
+  // @@CODE[dropDown1]
+  dropDown1: SC.View.design({
     classNames: ['mixins-sample'],
     layout: { top: 30, left: 0, right: 0, bottom: 0 },
-    childViews: 'example1 example2 code'.w(),
+    childViews: 'example code'.w(),
     
-    example1: SC.LabelView.design(SCUI.SimpleButton, SCUI.DropDown, {
-      layout: {top: 25, centerX: -105, width: 200, height: 45},
+    example: SC.LabelView.design(SCUI.SimpleButton, SCUI.DropDown, {
+      layout: {top: 25, centerX: 0, width: 200, height: 45},
       classNames: ['click'],
       textAlign: SC.ALIGN_CENTER,
       value: 'Click on Me To Do a Normal Menu',
       dropDown: SC.MenuPane.design({
-        contentView: SC.View.design({}), /* blank view; sproutcore will take care of this automatically */
-        layout: { width: 116, height: 0 }, /* height gets set automatically */
+        /* blank view; sproutcore will take care of this automatically */
+        contentView: SC.View.design({}), 
+        /* height gets set automatically */
+        layout: { width: 116, height: 0 }, 
         itemTitleKey: 'title',
         itemTargetKey: 'target',
         itemActionKey: 'action',
         itemSeparatorKey: 'isSeparator',
         itemIsEnabledKey: 'isEnabled',
         items: [
-          { title: "Action 1", target: Samples.mixinSourceController, action: 'fireAction1', isEnabled: YES },
-          { title: "Action 2", target: Samples.mixinSourceController, action: 'fireAction2', isEnabled: YES },
+          { title: "Action 1", target: Samples.mixinSourceController, 
+            action: 'fireAction1', isEnabled: YES },
+          { title: "Action 2", target: Samples.mixinSourceController, 
+            action: 'fireAction2', isEnabled: YES },
           { isSeparator: YES },
-          { title: "Action 3", target: Samples.mixinSourceController, action: 'fireAction3', isEnabled: YES }
+          { title: "Action 3", target: Samples.mixinSourceController, 
+            action: 'fireAction3', isEnabled: YES }
         ]
       })
     }),
     
-    example2: SC.LabelView.design(SCUI.SimpleButton, SCUI.DropDown, {
-      layout: {top: 25, centerX: 105, width: 200, height: 45},
+    code: Samples.CodeView.design({
+      layout: {top: 175, left: 10, right: 10, bottom: 10},
+      codeBinding: SC.Binding.from('Samples.codeSamples.dropDown1').oneWay()
+    })
+  }),
+  // @@END_CODE
+  
+  // @@CODE[dropDown2]
+  dropDown2: SC.View.design({
+    classNames: ['mixins-sample'],
+    layout: { top: 30, left: 0, right: 0, bottom: 0 },
+    childViews: 'example code'.w(),
+        
+    example: SC.LabelView.design(SCUI.SimpleButton, SCUI.DropDown, {
+      layout: {top: 25, centerX: 0, width: 200, height: 45},
       classNames: ['click'],
       textAlign: SC.ALIGN_CENTER,
       value: 'Click on Me To Do a Custom Menu',
@@ -199,15 +218,14 @@ Samples.mixinsPage = SC.Page.design({
       })
     }),
     
-    code: SC.LabelView.design({
-      layout: {top: 175, left: 10, right: 10, height: 500},
-      classNames: ['code'],
-      textAlign: SC.ALIGN_CENTER,
-      value: 'Code Here'
+    code: Samples.CodeView.design({
+      layout: {top: 175, left: 10, right: 10, bottom: 10},
+      codeBinding: SC.Binding.from('Samples.codeSamples.dropDown2').oneWay()
     })
   }),
+  // @@END_CODE
   
-  // ToolTip Example
+  // @@CODE[toolTip]
   toolTip: SC.View.design({
     classNames: ['mixins-sample'],
     layout: { top: 30, left: 0, right: 0, bottom: 0 },
@@ -221,12 +239,10 @@ Samples.mixinsPage = SC.Page.design({
       toolTip: 'Buy Low, Sell High, only drink Cappuccino'
     }),
     
-    code: SC.LabelView.design({
-      layout: {top: 175, left: 10, right: 10, height: 500},
-      classNames: ['code'],
-      textAlign: SC.ALIGN_CENTER,
-      value: 'Code Here'
+    code: Samples.CodeView.design({
+      layout: {top: 175, left: 10, right: 10, bottom: 10},
+      codeBinding: SC.Binding.from('Samples.codeSamples.toolTip').oneWay()
     })
   })
-  
+  // @@END_CODE
 });

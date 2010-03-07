@@ -1,17 +1,17 @@
-// Project:   Samples - mainPage
-// Copyright: ©2009 My Company, Inc.
+// Project:   SCUI Samples - contentEditablePage
+// Copyright: ©2009-2010 Evin Grano and Contributors
 // ==========================================================================
 /*globals Samples */
-sc_require('core');
 
-// This page describes the main user interface for your application.  
+// This page describes the main user interface for your application.
+// @@CODE[content_editable]  
 Samples.contentEditablePage = SC.Page.design({
   
   mainView: SC.View.design({
-    childViews: 'bold italic underlined createLink contentEditable translucentCE resizableContentEdiable'.w(),
+    childViews: 'bold italic underlined createLink contentEditable translucentCE resizableContentEdiable code'.w(),
     
     bold: SC.ButtonView.design({
-      layout: { left: 40, top: 50, width: 90, height: 24 },
+      layout: { left: 40, top: 40, width: 90, height: 24 },
       title: 'Bold',
       buttonBehavior: SC.TOGGLE_BEHAVIOR,
       toggleOnValue: YES,
@@ -20,7 +20,7 @@ Samples.contentEditablePage = SC.Page.design({
     }),
     
     italic: SC.ButtonView.design({
-      layout: { left: 135, top: 50, width: 90, height: 24 },
+      layout: { left: 135, top: 40, width: 90, height: 24 },
       title: 'Italic',
       buttonBehavior: SC.TOGGLE_BEHAVIOR,
       toggleOnValue: YES,
@@ -29,7 +29,7 @@ Samples.contentEditablePage = SC.Page.design({
     }),
     
     underlined: SC.ButtonView.design({
-      layout: { left: 40, top: 79, width: 90, height: 24 },
+      layout: { left: 40, top: 69, width: 90, height: 24 },
       title: 'Underline',
       buttonBehavior: SC.TOGGLE_BEHAVIOR,
       toggleOnValue: YES,
@@ -38,29 +38,34 @@ Samples.contentEditablePage = SC.Page.design({
     }),
     
     createLink: SC.ButtonView.design({
-      layout: { left: 135, top: 79, width: 90, height: 24 },
+      layout: { left: 135, top: 69, width: 90, height: 24 },
       title: "Create Link",
       target: Samples.contentEditableController,
       action: 'createLink'
     }),
     
     contentEditable: SCUI.ContentEditableView.design({
-      layout: { left: 40, top: 108, width: 300, height: 125 },
+      layout: { left: 40, top: 98, width: 300, height: 125 },
       value: 'Basic content editable view'
     }),
     
     translucentCE: SCUI.ContentEditableView.design({
-      layout: { left: 360, top: 108, width: 300, height: 125 },
+      layout: { left: 360, top: 98, width: 300, height: 125 },
       value: 'A transparent content editable view',
       isOpaque: YES,
       allowScrolling: NO
     }),
     
     resizableContentEdiable: SCUI.ContentEditableView.design({
-      layout: { left: 680, top: 108, width: 300, height: 125 },
+      layout: { left: 680, top: 98, width: 300, height: 125 },
       value: 'A content editable view that grows or shrinks depending on the size of the content',
       hasFixedDimensions: NO,
       allowScrolling: NO
+    }),
+    
+    code: Samples.CodeView.design({
+      layout: {top: 245, left: 10, right: 10, bottom: 10},
+      codeBinding: SC.Binding.from('Samples.codeSamples.content_editable').oneWay()
     })
     
   }),
@@ -68,3 +73,4 @@ Samples.contentEditablePage = SC.Page.design({
   contentEditableOutlet: SC.outlet('mainView.childViews.4')
   
 });
+// @@END_CODE

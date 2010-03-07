@@ -1,6 +1,6 @@
 // ==========================================================================
-// Project:   Samples - mainPage
-// Copyright: ©2009 My Company, Inc.
+// Project:   SCUI Samples - mainPage
+// Copyright: ©2009-2010 Evin Grano and Contributors
 // ==========================================================================
 /*globals Samples */
 

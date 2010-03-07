@@ -1,10 +1,11 @@
-// Project:   Samples - mainPage
-// Copyright: ©2009 My Company, Inc.
+// Project:   SCUI Samples - contextMenuPage
+// Copyright: ©2009-2010 Evin Grano and Contributors
 // ==========================================================================
 /*globals Samples */
 sc_require('core');
 
 // This page describes the main user interface for your application.  
+// @@CODE[context_menu]  
 Samples.contextMenuPage = SC.Page.design({
   
   mainView: SC.View.design({
@@ -20,12 +21,12 @@ Samples.contextMenuPage = SC.Page.design({
       
       mouseDown: function(evt){
         var menuOptions = [
-          { title: "Action #1",  target: Samples, action: 'fireAction1', isEnabled: YES },
-          { title: "Action #2",  target: Samples, action: 'fireAction2', isEnabled: YES },
+          { title: 'Action #1',  target: Samples, action: 'fireAction1', isEnabled: YES },
+          { title: 'Action #2',  target: Samples, action: 'fireAction2', isEnabled: YES },
           { isSeparator: YES },
-          { title: "Action #3", target: Samples, action: '', isEnabled: NO },
+          { title: 'Action #3', target: Samples, action: '', isEnabled: NO },
           { isSeparator: YES },
-          { title: "Action #4", target: Samples, action: '', isEnabled: NO }
+          { title: 'Action #4', target: Samples, action: '', isEnabled: NO }
         ];
 
         var menu = SCUI.ContextMenuPane.create({
@@ -39,11 +40,10 @@ Samples.contextMenuPage = SC.Page.design({
       }
     }),
     
-    code: SC.LabelView.design({
+    code: Samples.CodeView.design({
       layout: {top: 200, left: 10, right: 10, height: 500},
-      classNames: ['code'],
-      textAlign: SC.ALIGN_CENTER,
-      value: 'Code Here'
+      codeBinding: SC.Binding.from('Samples.codeSamples.context_menu').oneWay()
     })
   })
 });
+// @@END_CODE

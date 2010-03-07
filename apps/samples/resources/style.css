@@ -6,7 +6,8 @@
   background-color: red;
 }
 
-.code {
+.code-sample {
+  padding: 10px;
   border: 1px black solid;
   background-color: white;
   color: black;
