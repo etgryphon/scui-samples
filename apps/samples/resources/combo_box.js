@@ -23,10 +23,9 @@ Samples.comboBoxPage = SC.Page.design({
     
     example: SCUI.ComboBoxView.design({
       layout: { top: 40 , centerX: 20, height: 24, width: 150 },
-      contentBinding: 'Samples.comboBoxController',
-      contentBindingDefault: SC.Binding.oneWay(),
-      contentValueKey: 'name',
-      selectedItemBinding: 'Samples.comboBoxController.selection'
+      objectsBinding: SC.Binding.oneWay('Samples.comboBoxController.content'),
+      valueKey: 'value',
+      nameKey: 'name'
     }),
     
     code: Samples.CodeView.design({
