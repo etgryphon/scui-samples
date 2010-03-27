@@ -13,17 +13,30 @@ Samples.comboBoxPage = SC.Page.design({
   mainView: SC.View.design({
     classNames: ['combobox-sample'],
     layout: { top: 30, left: 0, right: 0, bottom: 0 },
-    childViews: 'label example code'.w(),
+    childViews: 'label1 example1 label2 example2 code'.w(),
     
-    label: SC.LabelView.design({
-      layout: { top: 0 , centerX: 20, height: 35, width: 300 },
+    label1: SC.LabelView.design({
+      layout: { top: 0 , centerX: -220, height: 35, width: 300 },
+      textAlign: SC.ALIGN_CENTER,
+      value: 'Start Typing in the Area to Search for Color'
+    }),
+    
+    example1: SCUI.ComboBoxView.design({
+      layout: {top: 40, centerX: -220, height: 24, width: 150},
+      objects: [{id: 1, name: "Red"}, {id: 2, name: "Blue"}, {id: 3, name: "Green"}, {id: 4, name: "Purple"}, {id: 5, name: "Brown"}, {id: 6, name: "Black"}],
+      nameKey: "name",
+      valueKey : "id"
+    }),
+    
+    label2: SC.LabelView.design({
+      layout: { top: 0 , centerX: 220, height: 35, width: 300 },
       textAlign: SC.ALIGN_CENTER,
       value: 'Start Typing in the Area to Search for US States'
     }),
     
-    example: SCUI.ComboBoxView.design({
-      layout: { top: 40 , centerX: 20, height: 24, width: 150 },
-      objectsBinding: SC.Binding.oneWay('Samples.comboBoxController.content'),
+    example2: SCUI.ComboBoxView.design({
+      layout: { top: 40 , centerX: 220, height: 24, width: 150 },
+      objectsBinding: SC.Binding.from('Samples.comboBoxController.content').oneWay(),
       valueKey: 'value',
       nameKey: 'name'
     }),
