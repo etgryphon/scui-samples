@@ -14,19 +14,29 @@ Samples.CodeView = SC.View.extend({
     var code = this.get('code');
     if (code){
       context = context.begin('pre')
+        .setClass({'sh_javascript': YES, 'sh_sourceCode': YES})
         .attr({'lang': 'javascript'})
           .text(code)
         .end();
     }
   },
   
-  isVisibleInWindow: function(){
-    var items = document.getElementsByTagName("pre");
+  didCreateLayer: function(){
+    this._codeHighlighting();
+  },
+  
+  didUpdateLayer: function(){
+    this._codeHighlighting();
+  },
+  
+  _codeHighlighting: function(){
+    var items = this.$('pre');
+    console.log('items.length == %@'.fmt(items.length));
     for (var i=0, l = items.length; i < l; i++) {
       var code = items[i].innerHTML;
-      console.log(code);
+      //console.log(code);
       var match = code.match(/^<code>\#\!([a-z]+)\n/);
-      console.log(match);
+      //console.log(match);
       if (match) {
         items[i].className = "sh_" + match[1];
         items[i].innerHTML = "<code>" + code.substr(match[0].length);
@@ -36,5 +46,4 @@ Samples.CodeView = SC.View.extend({
     }
     sh_highlightDocument();
   }
-  
 });

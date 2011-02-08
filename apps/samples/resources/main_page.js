@@ -18,11 +18,10 @@ Samples.mainPage = SC.Page.design({
       classNames: ['sample-tabs'],
       nowShowing: 'Samples.comboBoxPage.mainView', 
       items: [
-        /*{ title: "Calendar", value:'Samples.mainPage.calendarSampleView' },*/
+        { title: "Calendar", value:'Samples.calendarPage.mainView' },
         { title: "Combo Box", value: 'Samples.comboBoxPage.mainView' },
         /*{ title: "Collapsible", value:'Samples.mainPage.collapsibleSampleView' },*/
         { title: "Context Menu Pane", value:'Samples.contextMenuPage.mainView' },
-        /*{ title: "ContentEditable", value:'Samples.mainPage.contentEditableSampleView' },*/
         /*{ title: "Upload", value:'Samples.mainPage.uploadSampleView' },*/
         { title: "Content Editable", value:'Samples.contentEditablePage.mainView' },
         { title: "Mixins", value:'Samples.mixinsPage.mainView' }
