@@ -13,4 +13,5 @@ config :scui, :required => [:sproutcore, :'scui/foundation', :'scui/calendar', :
 # application, even bundles that come from other gems.
 config :samples do |c|
   c[:required] = [:sproutcore, :scui]
+  c[:theme] = :'scui/standard_theme'
 end
